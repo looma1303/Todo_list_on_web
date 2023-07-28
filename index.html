@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="ko" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Todo_list</title>
-  </head>
-  <body>
-    <script type="text/javascript" src="main.js">
-
-    </script>
-    <h1>Todo_list_on_web</h1>
-    <input type="text" name="" value="">
-    <ol></ol>
-
-  </body>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">    <!--style.css 파일 참조하기-->
+    <title>To Do List</title>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <div class="container">
+        <input id="inputField" type="text">   <!--text 입력창(할일 입력창) 만들기-->
+        <button id="addToDo"> + </button>     <!-- + 버튼 만들기 -->
+        <div class="to-dos" id="toDoList"> </div>  
+    </div>
+    <script src="main.js"> </script>   <!--javascript 파일 참조하기-->
+</body>
 </html>
