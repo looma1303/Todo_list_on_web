@@ -1,22 +1,44 @@
-let inputBox = document.getElementById('inputField'); 
-let addToDo = document.getElementById('addToDo');
-let toDoList = document.getElementById('toDoList');
+let doTitle = document.getElementById('doTitle');
+let doDetail = document.getElementById('doDetail');
+let doDate = document.getElementById('doDate');
+let todolist = document.getElementById('todolist');
+let add_button = document.getElementById('add_button');
 
-addToDo.addEventListener('click', function(){
-    var list = document.createElement('li');
-    if (!inputBox.value)
-        alert('내용을 입력해 주세요!');
-    else
-    {
-        list.innerText = inputBox.value;
-        toDoList.appendChild(list);
-        inputBox.value= "";
+
+add_button.addEventListener('click', function(){
+  if (!doTitle.value) {
+    alert("할일 제목이 입력되지 않았습니다.");
+  }
+  else {
+    var do_title = document.createElement('li');
+    var do_detail = document.createElement('p');
+    var do_date = document.createElement('p');
+    var del_button = document.createElement('button')
+    del_button.id = "del_button"
+    del_button.innerText = "완료"
+    del_button.addEventListener('click', (event) => {
+      var parent = event.target.parentElement;
+      parent.style.textDecoration = "line-through";
+
+    })
+
+
+    do_title.innerText = doTitle.value;
+    if (doDetail.value != "") {
+      do_detail.innerText = "-"+doDetail.value;
+      do_title.appendChild(do_detail);
+    }
+    if (doDate.value != "") {
+      do_date.innerText = doDate.value;
+      do_title.appendChild(do_date);
     }
 
-    list.addEventListener('click', function(){
-        list.style.textDecoration = "line-through";
-    })
-    list.addEventListener('dblclick', function(){
-        toDoList.removeChild(list);
-    })
+    do_title.appendChild(del_button);
+    todolist.appendChild(do_title);
+
+
+    doDetail.value = "";
+    doTitle.value = "";
+    doDate.value = "";
+  }
 })
