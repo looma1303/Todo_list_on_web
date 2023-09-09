@@ -1,0 +1,33 @@
+body {
+  position: absolute;
+}
+
+h1 {
+  margin-left: 45%;
+  margin-right: 55%;
+  white-space: nowrap;
+}
+
+.input {
+  margin-left: 600px;
+  margin-right:600px;
+  margin-bottom: 50px;
+}
+
+.navi {
+  display:flex;
+}
+
+.제목 {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.내용 {
+  margin-left: 200px;
+  margin-right: 300px;
+}
+
+.output {
+  display:flex;
+}
